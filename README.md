@@ -1,2 +1,2 @@
 # Azure-DataLakeCopy
-Powershell to copy data lake file from local computer
+Powershell to upload or download to Azure Data lake using a service principle account.
