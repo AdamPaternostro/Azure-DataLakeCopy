@@ -1,7 +1,7 @@
 ﻿# Data Lake items
-$fileNameToUpload = "Invoice-1215752192.csv"
+$fileNameToDownload = "Invoice-1215752192.csv"
 $dataLakePath = "/Spark-Data/" + $fileNameToUpload
-$fileToDownload="C:\Users\guest\Desktop\Invoice1\" + $fileNameToUpload
+$fileToDownload="C:\Users\guest\Desktop\Invoice1\" + $fileNameToDownload
 $sourceDataLakeAccount = "sampledatalakestore"
 
 # Login Items
@@ -19,7 +19,7 @@ Select-AzureRmSubscription -SubscriptionId $subscriptionId
 # Download from Data Lake
 $write =  "BEGIN Download: " + $fileToDownload
 Write-Output $write
-Export-AzureRmDataLakeStoreItem -AccountName $destinationDataLakeAccount -Path $dataLakePath -Destination $fileToDownload -Force
+Export-AzureRmDataLakeStoreItem -AccountName $sourceDataLakeAccount -Path $dataLakePath -Destination $fileToDownload -Force
 $write =  "END   Download: " + $fileToDownload
 Write-Output $write
 
